@@ -15,11 +15,24 @@ namespace _02_Laboratory_Exercise_1_Madayag
         public FrmCalculator()
         {
             InitializeComponent();
+
+            CalculateButton.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            CalculateButton.ForeColor = ColorTranslator.FromHtml("#DFE6DA");
+
+            CalcLabel.ForeColor = ColorTranslator.FromHtml("#000907");
+            label1.ForeColor = ColorTranslator.FromHtml("#363636");
+            label2.ForeColor = ColorTranslator.FromHtml("#363636");
+            label3.ForeColor = ColorTranslator.FromHtml("#222021");
+            label4.ForeColor = ColorTranslator.FromHtml("#363636");
+            label5.ForeColor = ColorTranslator.FromHtml("#363636");
+
+            AnswerText.BackColor = ColorTranslator.FromHtml("#F3F3F3");
         }
 
         private void FrmCalculator_Load(object sender, EventArgs e)
         {
             this.BackColor = ColorTranslator.FromHtml("#F3F3F3");
         }
+
     }
 }
