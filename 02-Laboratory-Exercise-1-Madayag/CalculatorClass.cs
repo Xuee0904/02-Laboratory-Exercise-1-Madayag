@@ -8,8 +8,8 @@ namespace _02_Laboratory_Exercise_1_Madayag
 {
     internal class CalculatorClass
     {
-        public delegate T Information<T>(T num1, T num2);
-        public Information<string> information;
+        public delegate T Formula<T>(T num1, T num2);
+        public Formula<double> formula;
 
         public double GetSum(double num1, double num2)
         {
@@ -21,7 +21,21 @@ namespace _02_Laboratory_Exercise_1_Madayag
             return num1 - num2;
         }
 
-        public event EventHandler CalculateEvent
+        public double GetProduct(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+
+        public double GetQuotient(double num1, double num2)
+        {
+            return num1 / num2;
+        }
+
+        public delegate double delCal(double num1, double num2);
+
+        private delCal calculateEvent;
+
+        public event delCal CalculateEvent
         {
             add
             {

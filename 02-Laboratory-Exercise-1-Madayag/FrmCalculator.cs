@@ -13,6 +13,7 @@ namespace _02_Laboratory_Exercise_1_Madayag
     public partial class FrmCalculator : Form
     {
         CalculatorClass cal = new CalculatorClass();
+        
         double num1, num2;
 
         public FrmCalculator()
@@ -44,7 +45,38 @@ namespace _02_Laboratory_Exercise_1_Madayag
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            
+            num1 = Convert.ToDouble(fNumText.Text);
+            num2 = Convert.ToDouble(sNumText.Text);
+
+            if (comboBox1.SelectedItem != null)
+            {
+                string operation = comboBox1.SelectedItem.ToString();
+                switch (operation)
+                {
+                    case "+":
+                        cal.CalculateEvent += new CalculatorClass.delCal(cal.GetSum);
+                        AnswerText.Text = cal.GetSum(num1, num2).ToString();
+                        break;
+                    case "-":
+                        cal.CalculateEvent += new CalculatorClass.delCal(cal.GetDifference);
+                        AnswerText.Text = cal.GetDifference(num1, num2).ToString();
+                        break;
+                    case "*":
+                        cal.CalculateEvent += new CalculatorClass.delCal(cal.GetProduct);
+                        AnswerText.Text = cal.GetProduct(num1, num2).ToString();
+                        break;
+                    case "/":
+                        cal.CalculateEvent += new CalculatorClass.delCal(cal.GetQuotient);
+                        AnswerText.Text = cal.GetQuotient(num1, num2).ToString();
+                        break;
+                }
+
+
+            }
+            else
+            {
+                Console.WriteLine("Please make sure that you selected an operator!");
+            }
         }
     }
 }
