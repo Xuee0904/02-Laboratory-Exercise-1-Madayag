@@ -12,9 +12,17 @@ namespace _02_Laboratory_Exercise_1_Madayag
 {
     public partial class FrmCalculator : Form
     {
+        CalculatorClass cal = new CalculatorClass();
+        double num1, num2;
+
         public FrmCalculator()
         {
             InitializeComponent();
+
+            comboBox1.Items.Add("+");
+            comboBox1.Items.Add("-");
+            comboBox1.Items.Add("*");
+            comboBox1.Items.Add("/");
 
             CalculateButton.BackColor = ColorTranslator.FromHtml("#3A5A40");
             CalculateButton.ForeColor = ColorTranslator.FromHtml("#DFE6DA");
@@ -34,5 +42,9 @@ namespace _02_Laboratory_Exercise_1_Madayag
             this.BackColor = ColorTranslator.FromHtml("#F3F3F3");
         }
 
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

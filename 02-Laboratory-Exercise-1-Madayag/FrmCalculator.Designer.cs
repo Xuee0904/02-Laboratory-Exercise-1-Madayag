@@ -157,6 +157,7 @@
             this.CalculateButton.TabIndex = 11;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // FrmCalculator
             // 
